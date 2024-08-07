@@ -1,0 +1,17 @@
+mutation SignUp {
+    signUp(
+        userInput: {
+            firstName: "Kobinarth"
+            lastName: "Panchalingam"
+            username: "user@gmail.com"
+            password: "1234"
+        }
+    ) {
+        id
+        firstName
+        lastName
+        username
+        password
+    }
+}
+

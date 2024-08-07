@@ -1,0 +1,36 @@
+type Users {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    username: String!
+    password: String!
+}
+
+type Hobby {
+    id: ID!
+    hobbyName: String!
+    user: Users!
+}
+
+type Query {
+    getHobbiesByUserId(userId: ID!): [Hobby]
+}
+
+type Mutation {
+    signUp(userInput: UserInput): Users!
+    signIn(username: String!, password: String!): Users
+    addHobby(hobbyInput: HobbyInput): Hobby!
+    deleteHobby(id: ID!): Boolean!
+}
+
+input UserInput {
+    firstName: String!
+    lastName: String!
+    username: String!
+    password: String!
+}
+
+input HobbyInput {
+    hobbyName: String!
+    userId: ID!
+}
